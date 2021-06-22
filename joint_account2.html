@@ -1,0 +1,81 @@
+<html>
+<head>
+<title>Welcome Page</title>
+</head>
+<style>
+    body
+    {
+        background-image: url("bank1.jpg");
+        background-size: cover;
+    }
+    .head1
+    {
+        margin-left: 1000px;
+    }
+    .head
+    {
+        background-color: orange;
+        height: 30px;
+        text-align: center;
+    }
+    #lo
+    {
+        margin-left: 900px;
+        text-decoration: none;
+        color: black;
+    }
+    #lo:hover
+    {
+        background-color: lightslategray;
+    }
+</style>
+<script>
+    alert("successfully login");
+    function credit()
+    { 
+    var a=parseInt(document.getElementById("nu").value);
+    var b=parseInt(document.getElementById("bal").innerHTML);
+    var sum=a+b;
+    localStorage.setItem("Credit",sum);
+    document.getElementById("bal").innerHTML = localStorage.getItem("Credit");
+    }
+    function debit()
+    { 
+    var a=parseInt(document.getElementById("nu").value);
+    var b=parseInt(document.getElementById("bal").innerHTML);
+    var sum=Math.abs(a-b);
+    localStorage.setItem("Debit",sum);
+    document.getElementById("bal").innerHTML = localStorage.getItem("Debit");
+    
+    }
+    function myFunction()
+    {
+        document.getElementById("bal").innerHTML = localStorage.getItem("Credit");
+        document.getElementById("bal").innerHTML = localStorage.getItem("Debit");
+    }
+
+
+ </script>   
+<body onload="myFunction()">
+    <div class="head">
+        <h2 style="color: black" class="head">Welcome to Abcd Bank <a id="lo" href="joint_account.html">LogOut </a></h2>
+    </div>
+    <br><br>
+    <div class="head1">
+        <h3 style="color: chartreuse; display: inline;">  Account Number:20211234</h3>
+    </div>
+
+    <div class="d1">
+        <p class="d2" style="color: greenyellow;" >Your current balance:</p>
+        <p  style="color: greenyellow;" id="bal"> 500</p>
+    </div>
+
+    <div class="in">
+        <input type="number" id="nu" placeholder="Number">
+        <input type="button" value="Credit" onclick="credit()">
+        <input type="button" value="Dedit" onclick="debit()">
+        
+    </div>
+    
+</body>
+</html>

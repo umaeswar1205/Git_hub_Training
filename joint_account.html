@@ -1,0 +1,94 @@
+<html>
+<head>
+<title>Login Page</title>
+</head>
+<style>
+    body
+    {
+        background-image: url("bank.jpg");
+        background-size: cover;
+    }
+    .d1
+    {
+        margin-left: 500px;
+        margin-top: 100px;
+        background-color: rgb(5, 29, 37);
+        width: 23%;
+        height: 30%;
+        padding: 25px;
+    }
+    td
+    {
+        padding: 5px;
+        color: chartreuse;
+        font-size: 18;
+    }
+    .head2
+    {
+        margin-left: 1200;
+        background-color: white;
+        width: 4%;
+
+    }
+    .lp
+    {
+        text-align: center;
+        font-size: 25;
+
+    }
+    
+</style>
+<body>
+<div class="head">
+    <h2 style="color: greenyellow;">Welcome to Abcd Bank</h2>
+</div>
+
+<div class="head2">
+    <a href="signup.html" style="text-decoration: none;">Signup</a>
+</div>
+
+<div class="d1">
+<form class="fm" name="loginForm" method="post" action="joint_account2.html">
+<table class="table">
+<tr>
+<td colspan=2 style="color: chartreuse;" class="lp"><b>Login Page</b></td>
+</tr>
+
+<tr>
+<td>Username:</td>
+<td><input type="text" size=25 name="userid" id="Un"></td>
+</tr>
+
+<tr>
+<td>Password:</td>
+<td><input type="Password" size=25 name="pwd"></td>
+</tr>
+
+<tr>
+<td ><input type="Reset"></td>
+<td><input type="submit" onclick="return check(this.form)" value="Login"></td>
+</tr>
+
+</table>
+</form>
+</div>
+<script language="javascript">
+function check(form)
+{
+
+    if((form.userid.value == "uma" && form.pwd.value == "uma") ||(form.userid.value == "eswar" && form.pwd.value == "eswar"))
+{
+    document.getElementById("bal").innerHTML = localStorage.getItem("Credit");
+	return true;
+}
+else
+{
+	alert("Error Password or Username")
+	return false;
+}
+}
+
+</script>
+
+</body>
+</html>
